@@ -7,4 +7,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gem "sinatra"
 gem "sinatra-contrib"
 
-gem "rubocop", groups: [:development, :test]
+group :development do
+  gem "rubocop"
+  gem "rubocop-fjord", require: false
+end
