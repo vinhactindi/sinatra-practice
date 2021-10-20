@@ -21,7 +21,7 @@ get '/memos' do
 end
 
 post '/memos' do
-  @memo = Memo.new(id: params['id'], title: params['title'], content: params['content']).save
+  @memo = Memo.new(title: params['title'], content: params['content']).save
   redirect :memos
 end
 

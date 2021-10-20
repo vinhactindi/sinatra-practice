@@ -7,7 +7,7 @@ require 'byebug'
 class Memo
   attr_accessor :id, :title, :content
 
-  def initialize(id:, title:, content:)
+  def initialize(title:, content:, id: nil)
     @id = id
     @title = title.strip
     @content = content.strip
