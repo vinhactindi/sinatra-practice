@@ -1,0 +1,12 @@
+h1
+  code
+    = @memo.title
+.memo-content
+  = @memo.content
+a.button.margin href="/memos/#{@memo.id}/edit"
+  | ✏️
+form action="/memos/#{@memo.id}" method="post"
+  input type="hidden" name="_method" value="DELETE"
+  input.button.margin type="submit" value="削除"
+a.button.margin href="/"
+  | ←

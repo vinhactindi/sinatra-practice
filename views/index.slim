@@ -1,0 +1,9 @@
+h1
+  | 📝
+.memo-list
+  - @memos.each do |memo|
+    a.memo-item href="/memos/#{memo.id}"
+      = memo.title
+  hr
+a.button.sticky-bottom href="memos/new"
+  | +
