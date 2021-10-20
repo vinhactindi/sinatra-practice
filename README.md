@@ -4,8 +4,22 @@ SinatraでシンプルなWebアプリを作ろうの課題に取り組みます�
 
 ## 使い方
 
+1. リポジトリのクローンを作成する
+
 ```
-$ bundle install && ruby main.rb
+$ git clone https://github.com/vinhactindi/sinatra-practice.git
+```
+
+2. 必要なgemをインストールする
+
+```
+$ bundle install 
+```
+
+3. アプリを起動します
+
+```
+$ ruby main.rb
 ```
 
 ## URL
