@@ -33,6 +33,7 @@ GEM
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
+    securerandom (0.1.0)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -57,6 +58,7 @@ PLATFORMS
 DEPENDENCIES
   rubocop
   rubocop-fjord
+  securerandom
   sinatra
   sinatra-contrib
   slim
