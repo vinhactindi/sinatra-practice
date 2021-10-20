@@ -5,6 +5,12 @@ require './models/memo'
 require 'sinatra'
 require 'sinatra/reloader'
 
+helpers do
+  def h(text)
+    Rack::Utils.escape_html(text)
+  end
+end
+
 get '/' do
   redirect :memos
 end

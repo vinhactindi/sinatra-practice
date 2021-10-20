@@ -1,8 +1,8 @@
 h1
   code
-    = @memo.title
+    = h @memo.title
 .memo-content
-  = @memo.content
+  = h @memo.content
 a.button.margin href="/memos/#{@memo.id}/edit"
   | ✏️
 form action="/memos/#{@memo.id}" method="post"
