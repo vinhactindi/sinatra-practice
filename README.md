@@ -16,7 +16,7 @@ $ git clone https://github.com/vinhactindi/sinatra-practice.git
 $ bundle install 
 ```
 
-3. アプリを起動します
+3. アプリを起動する
 
 ```
 $ bundle exec ruby main.rb
