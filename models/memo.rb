@@ -2,7 +2,6 @@
 
 require 'securerandom'
 require 'json'
-require 'byebug'
 
 class Memo
   attr_accessor :id, :title, :content
@@ -18,12 +17,8 @@ class Memo
 
     @id ||= SecureRandom.uuid
 
-    begin
-      File.write("public/data/#{@id}.json", to_json)
-      self
-    rescue StandardError
-      nil
-    end
+    File.write("public/data/#{@id}.json", to_json)
+    self
   end
 
   def destroy
@@ -33,8 +28,6 @@ class Memo
   def self.find(id)
     data = JSON.parse(File.read("public/data/#{id}.json"))
     Memo.new(id: id, title: data['title'], content: data['content'])
-  rescue StandardError
-    nil
   end
 
   def self.all

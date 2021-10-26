@@ -8,6 +8,7 @@ gem 'securerandom'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'slim'
+gem 'webrick'
 
 group :development, :test do
   gem 'byebug'

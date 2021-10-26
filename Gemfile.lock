@@ -52,6 +52,7 @@ GEM
     temple (0.8.2)
     tilt (2.0.10)
     unicode-display_width (2.1.0)
+    webrick (1.7.0)
 
 PLATFORMS
   x86_64-darwin-20
@@ -64,6 +65,7 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   slim
+  webrick
 
 BUNDLED WITH
    2.2.28
