@@ -19,7 +19,7 @@ $ bundle install
 3. アプリを起動します
 
 ```
-$ ruby main.rb
+$ bundle exec ruby main.rb
 ```
 
 ## URL
