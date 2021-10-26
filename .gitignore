@@ -120,4 +120,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # app data
-/public/data/*
+/public/data/*.json
