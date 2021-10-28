@@ -4,7 +4,7 @@ require 'securerandom'
 require 'json'
 
 class Memo
-  attr_accessor :id, :title, :content
+  attr_reader :id, :title, :content
 
   def initialize(title:, content:, id: nil)
     @id = id
