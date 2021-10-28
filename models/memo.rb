@@ -40,7 +40,7 @@ class Memo
 
   private
 
-  def to_json(*_args)
-    { id: @id, title: @title, content: @content }.to_json
+  def to_json(*args)
+    { id: @id, title: @title, content: @content }.to_json(args)
   end
 end
