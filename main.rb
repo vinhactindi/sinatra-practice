@@ -11,6 +11,10 @@ helpers do
   end
 end
 
+before do
+  Memo.migrate
+end
+
 get '/' do
   redirect :memos
 end

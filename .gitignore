@@ -121,3 +121,4 @@ $RECYCLE.BIN/
 
 # app data
 /public/data/*.json
+.env
