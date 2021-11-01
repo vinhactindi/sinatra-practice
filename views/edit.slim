@@ -1,0 +1,14 @@
+h1
+  | ✏️
+form action="/memos/#{@memo.id}" method="post"
+  input type="hidden" name="_method" value="PATCH"
+  .form-control
+    input.input type="text" name="title" id="title" placeholder="タイトル" required="" value=h(@memo.title)
+  .form-control
+    textarea.input cols="30" rows="10"  name="content" id="content"  placeholder="コンテンツ" required="" 
+      = h @memo.content
+  .form-control
+    input.button type="submit" value="保存"
+hr
+a.button.margin href="/"
+  | ←
