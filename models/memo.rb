@@ -22,26 +22,26 @@ class Memo
       @id ||= SecureRandom.uuid
       params = [@id, @title, @content]
     end
-    Memo.commit_sql(sql, params)
+    connection.exec_params(sql, params)
     self
   end
 
   def destroy
     sql = 'DELETE FROM Memo WHERE id=$1;'
     params = [@id]
-    Memo.commit_sql(sql, params)
+    connection.exec_params(sql, params)
   end
 
   def self.find(id)
     sql = 'SELECT title, content FROM Memo WHERE id=$1;'
     params = [id]
-    values = Memo.commit_sql(sql, params).values
+    values = connection.exec_params(sql, params).values
     Memo.new(id: id, title: values[0][0], content: values[0][1])
   end
 
   def self.all
     sql = 'SELECT id, title FROM Memo ORDER BY id ASC'
-    Memo.commit_sql(sql).values.map do |value|
+    connection.exec_params(sql).values.map do |value|
       Memo.new(id: value[0], title: value[1])
     end
   end
@@ -51,17 +51,14 @@ class Memo
            (id VARCHAR(36) PRIMARY KEY,
            title VARCHAR(255),
            content TEXT);"
-    Memo.commit_sql(sql)
+    connection.exec_params(sql)
   end
 
-  def self.commit_sql(*args)
-    connection = PG.connect(host: ENV['PG_HOST'],
-                            user: ENV['PG_USER'],
-                            password: ENV['PG_PASSWORD'],
-                            dbname: ENV['PG_DBNAME'],
-                            port: ENV['PG_PORT'])
-    response = connection.exec_params(*args)
-    connection.close
-    response
+  def self.connection
+    @connection ||= PG.connect(host: ENV['PG_HOST'],
+                               user: ENV['PG_USER'],
+                               password: ENV['PG_PASSWORD'],
+                               dbname: ENV['PG_DBNAME'],
+                               port: ENV['PG_PORT'])
   end
 end
