@@ -11,6 +11,8 @@ helpers do
   end
 end
 
+Memo.migrate
+
 get '/' do
   redirect :memos
 end
