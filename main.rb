@@ -11,9 +11,7 @@ helpers do
   end
 end
 
-before do
-  Memo.migrate
-end
+Memo.migrate
 
 get '/' do
   redirect :memos
